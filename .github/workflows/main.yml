@@ -51,6 +51,16 @@ jobs:
         python -m flake8 backend/
         cd backend/
         python manage.py test
+    
+    - name: Run pytest tests
+      env:
+          POSTGRES_USER: django_user
+          POSTGRES_PASSWORD: django_password
+          POSTGRES_DB: django_db
+          DB_HOST: 127.0.0.1
+          DB_PORT: 5432
+      run: |
+          pytest
   
 # .github/workflows/main.yml
 
