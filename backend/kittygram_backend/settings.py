@@ -4,7 +4,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY_DJANGO','')
+SECRET_KEY = os.getenv('SECRET_KEY_DJANGO')
 
 DEBUG = False
 
