@@ -34,7 +34,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'kittygram_backend.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
