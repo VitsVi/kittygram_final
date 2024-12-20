@@ -1,14 +1,15 @@
 # flake8: noqa
 import os
 from pathlib import Path
+from django.core.management.utils import get_random_secret_key
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY_DJANGO','somekey')
+SECRET_KEY = os.getenv('SECRET_KEY_DJANGO', get_random_secret_key())
 
-DEBUG = False
+DEBUG = bool(os.getenv('DEBUG_MODE'))
 
-ALLOWED_HOSTS = ['kittygrambackend.hopto.org','84.201.136.34']
+ALLOWED_HOSTS = ['localhost',] + os.getenv('ALLOWED_HOSTS').split(' ')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
